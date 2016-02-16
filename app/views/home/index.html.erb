@@ -1,0 +1,35 @@
+<h1>
+	Welcome to Kollector
+</h1>
+
+
+<h2>
+	Sign Up:
+</h2>
+<%= form_tag("/users", method: "post") do %>
+  <%=label_tag :email %>
+  <p>
+  	<%=text_field_tag :email %>
+  </p>
+  <%=label_tag :password %>
+  <p>
+  	<%=password_field_tag :password %>
+  </p>
+  <%= submit_tag :Submit%>
+<% end %>
+
+
+<h2>
+	Sign In:
+</h2>
+<%= form_tag("/sessions", method: "post") do %>
+  <%=label_tag :email %>
+  <p>
+  	<%=text_field_tag :email %>
+  </p>
+  <%=label_tag :password %>
+  <p>
+  	<%=password_field_tag :password %>
+  </p>
+  <%= submit_tag :Login%>
+<% end %>
