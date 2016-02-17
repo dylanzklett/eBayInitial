@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
   def index
-  	if current_user
-  		redirect_to user_path(@user)
-  	end
   end
   def new
   	@user = User.new
@@ -38,6 +35,7 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	if @user 
   		@user.destroy
+  		session.destroy
   		flash[:notice] = "User Deleted."
   		redirect_to root_path
   	end
