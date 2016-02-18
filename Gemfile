@@ -28,6 +28,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
  #Optimize form creation and resources
  gem 'simple_form'
+
+ #implement eBay's trading API
+ gem 'ebayr'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

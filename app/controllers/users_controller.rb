@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   	@user = User.create(user_params)
   	if @user.save
   		session[:user_id] = @user.id
-  		flash[:notice] = "Welcome."
+  		flash[:notice] = "Welcome!"
   		redirect_to	user_path(@user)
   	else
   		flash[:notice] = "There was an error creating your account. Try again."
@@ -32,6 +32,13 @@ class UsersController < ApplicationController
   	end
   end
   def destroy
+  	@user = User.find(params[:id])
+  	if @user 
+  		@user.destroy
+  		session.destroy
+  		flash[:notice] = "User Deleted."
+  		redirect_to root_path
+  	end
   end
 
   private
